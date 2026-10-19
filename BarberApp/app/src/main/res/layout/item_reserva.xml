@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="5dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:padding="18dp">
+
+        <!-- Nombre del servicio -->
+        <TextView
+            android:id="@+id/txtServicioReserva"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Corte + barba"
+            android:textColor="#3E2723"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Estado de la reserva -->
+        <TextView
+            android:id="@+id/txtEstadoReserva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:background="#FFF0D9"
+            android:text="Estado: PENDIENTE"
+            android:textColor="#8A633E"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/txtServicioReserva"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Cliente -->
+        <TextView
+            android:id="@+id/txtClienteReserva"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Cliente: Juan Pérez"
+            android:textColor="#424242"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@id/txtEstadoReserva"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Fecha y hora -->
+        <TextView
+            android:id="@+id/txtFechaReserva"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Fecha: 20/10/2026 | Hora: 10:00"
+            android:textColor="#424242"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@id/txtClienteReserva"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Botón para cancelar -->
+        <Button
+            android:id="@+id/btnCancelarReserva"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Cancelar reserva"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#B3261E"
+            app:layout_constraintTop_toBottomOf="@id/txtFechaReserva"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,56 @@
+﻿@model List<BarberAppWeb.Models.Servicio>
+
+@{
+    ViewData["Title"] = "Servicios";
+}
+
+<div class="container mt-4">
+
+    <h1 class="mb-4">Servicios de la Barbería</h1>
+
+    <a href="/Servicios/Crear" class="btn btn-primary mb-3">
+        + Nuevo servicio
+    </a>
+
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Servicio</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Duración</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var servicio in Model)
+            {
+                <tr>
+                    <td>@servicio.IdServicio</td>
+                    <td>@servicio.Nombre</td>
+                    <td>@servicio.Descripcion</td>
+                    <td>S/ @servicio.Precio</td>
+                    <td>@servicio.Duracion min</td>
+                    <td>
+                        @(servicio.Estado ? "Activo" : "Inactivo")
+                    </td>
+                    <td>
+                        <a href="/Servicios/Editar/@servicio.IdServicio"
+                           class="btn btn-warning btn-sm">
+                            Editar
+                        </a>
+
+                        <a href="/Servicios/Eliminar/@servicio.IdServicio"
+                           class="btn btn-danger btn-sm">
+                            Eliminar
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
